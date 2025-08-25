@@ -348,7 +348,7 @@ export default function DoctorDashboard() {
                         </CardDescription>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge className={getClassificationColor(patient.classification)}>{!patient.classification ? "No Data" : patient.classification == 0 ? "Healthy" : "Not Healthy"}</Badge>
+                        <Badge className={getClassificationColor(patient.classification)}>{patient.classification === null || patient.classification === undefined ? "No Data" : patient.classification == 0 ? "Healthy" : "Not Healthy"}</Badge>
                         {/* <Badge className={getStatusColor(patient.status)}>{patient.status.replace("_", " ")}</Badge> */}
                         <Button variant="outline" size="sm" onClick={() => redirectPage(patient.patientID)}>
                           <Activity className="h-4 w-4 mr-2" />
