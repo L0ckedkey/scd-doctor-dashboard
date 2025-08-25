@@ -22,3 +22,15 @@ export const createPatient = async (data) => {
         body: JSON.stringify(data),
     });
 };
+
+export const setMedAssignConsultation = async (consultationID, status) => {
+    return apiFetch("/api/med-assign-consultation", {
+        method: "POST",
+        body: JSON.stringify({consultationID: consultationID, status: status}),
+    });
+};
+
+
+
+
+

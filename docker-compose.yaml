@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  frontend:
+    build: .
+    image: doctor-dashboard:latest 
+    container_name: scd-doctor-dashboard
+    ports:
+      - "8004:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
